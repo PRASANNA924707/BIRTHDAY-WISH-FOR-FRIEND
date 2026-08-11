@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Paddu 💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #ffd6e8, #fff0f7, #ffc1dc);
+    color: #7a2850;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.screen {
+    min-height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+
+.screen.active {
+    display: flex;
+}
+
+.card {
+    width: min(90%, 650px);
+    padding: 45px 25px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.72);
+    box-shadow: 0 15px 50px rgba(180,70,120,0.25);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: clamp(35px, 8vw, 65px);
+    margin: 15px 0;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: #ff4f9a;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255,79,154,0.35);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.07);
+}
+
+.heart {
+    font-size: 70px;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    50% { transform: scale(1.2); }
+}
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    font-size: 25px;
+    animation: fall 5s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+.message {
+    text-align: left;
+background: rgba(255,255,255,0.65);
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.signature {
+    margin-top: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.memories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.memory {
+    height: 150px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffb6d5, #ffe1ee);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: 0 5px 15px rgba(150,50,100,0.15);
+}
+
+@media (max-width: 500px) {
+    .memories {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SCREEN 1 -->
+<section class="screen active" id="screen1">
+    <div class="card">
+        <div class="heart">💗</div>
+
+        <p class="subtitle">Hey My Girl...</p>
+
+        <h1>Paddu 🎀</h1>
+
+        <p>
+            I made something special<br>
+            just for you...
+        </p>
+
+        <br>
+
+        <button onclick="startSurprise()">
+            🎁 Open Your Surprise
+        </button>
+    </div>
+</section>
+
+
+<!-- SCREEN 2 -->
+<section class="screen" id="screen2">
+    <div class="card">
+        <div class="heart">🎂</div>
+
+        <h1>Happy Birthday!</h1>
+
+        <h2>My Girl, Paddu 💗</h2>
+
+        <p>
+            Today is all about celebrating<br>
+            the beautiful person you are. ✨
+        </p>
+
+        <br>
+
+        <button onclick="showMessage()">
+            💌 Read My Message
+        </button>
+    </div>
+</section>
+
+
+<!-- SCREEN 3 -->
+<section class="screen" id="screen3">
+    <div class="card">
+
+        <h2>For You, Paddu 💌</h2>
+
+        <div class="message">
+
+            <p>
+                You mean so much to me, Paddu. I can honestly say
+                that, in all the friendships I've ever had,
+                <b>you are the bestest friend I've ever found.</b>
+            </p>
+
+            <br>
+
+            <p>
+                I don't even have to think twice to say that you are
+                one of the most precious people in my life.
+            </p>
+
+            <br>
+
+            <p>
+                I really wish that we always stay together and keep
+                this friendship forever.
+            </p>
+
+            <br>
+
+            <p>
+                I hope that, for as long as I'm here, we'll always
+                be there for each other.
+            </p>
+
+            <br>
+
+            <p>
+                I hope we keep laughing together, sharing everything,
+                and making countless beautiful memories.
+            </p>
+
+            <br>
+
+            <p>
+                Whenever the two of us are together, somehow
+                there's always happiness around us. ❤️
+            </p>
+
+            <br>
+
+            <p>
+                My life has become so much more beautiful since
+                the day we met. I'm genuinely so grateful that
+                you came into my life.
+            </p>
+
+            <p class="signature">
+                Happy Birthday once again, Paddu! 🎂💗
+            </p>
+
+        </div>
+
+        <br>
+
+        <button onclick="showMemories()">
+            📸 Our Memories
+        </button>
+
+    </div>
+</section>
+
+
+<!-- SCREEN 4 -->
+<section class="screen" id="screen4">
+    <div class="card">
+
+        <h2>Our Little Memories 📸💗</h2>
+
+        <p>
+            10 moments waiting to be filled with our memories ✨
+        </p>
+
+        <div class="memories">
+
+            <div class="memory">📷 Photo 1</div>
+            <div class="memory">📷 Photo 2</div>
+            <div class="memory">📷 Photo 3</div>
+            <div class="memory">📷 Photo 4</div>
+            <div class="memory">📷 Photo 5</div>
+            <div class="memory">📷 Photo 6</div>
+            <div class="memory">📷 Photo 7</div>
+            <div class="memory">📷 Photo 8</div>
+            <div class="memory">📷 Photo 9</div>
+            <div class="memory">📷 Photo 10</div>
+
+        </div>
+
+        <br>
+
+        <button onclick="showFinal()">
+            ✨ One Last Thing
+        </button>
+
+    </div>
+</section>
+
+
+<!-- SCREEN 5 -->
+<section class="screen" id="screen5">
+    <div class="card">
+
+        <div class="heart">🫶</div>
+
+        <h2>Here's to Us 💗</h2>
+
+        <p>
+            No matter how many years pass,
+            I hope our friendship always stays the same.
+        </p>
+
+        <br>
+
+        <p>
+            Let's keep laughing,<br>
+            keep making memories,<br>
+            and keep annoying each other forever. 😂💗
+        </p>
+
+        <br>
+
+        <h2>Happy Birthday, Paddu! 🎂✨</h2>
+
+        <p>
+            With lots of love and friendship 💕
+        </p>
+
+    </div>
+</section>
+
+
+<script>
+
+function changeScreen(current, next) {
+    document.getElementById(current).classList.remove("active");
+    document.getElementById(next).classList.add("active");
+}
+
+function startSurprise() {
+    changeScreen("screen1", "screen2");
+    createConfetti();
+}
+
+function showMessage() {
+    changeScreen("screen2", "screen3");
+}
+
+function showMemories() {
+    changeScreen("screen3", "screen4");
+}
+
+function showFinal() {
+    changeScreen("screen4", "screen5");
+    createConfetti();
+}
+
+function createConfetti() {
+
+    const emojis = ["💗", "💕", "🎀", "✨", "🎈", "🌸"];
+
+    for (let i = 0; i < 35; i++) {
+
+        const item = document.createElement("div");
+
+        item.className = "confetti";
+        item.innerText =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        item.style.left = Math.random() * 100 + "vw";
+        item.style.animationDelay = Math.random() * 4 + "s";
+
+        document.body.appendChild(item);
+
+        setTimeout(() => {
+            item.remove();
+        }, 9000);
+    }
+}
+
+</script>
+
+</body>
+</html>  
